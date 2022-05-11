@@ -1,5 +1,4 @@
 import random
-import xlrd
 from flask import Flask, request, abort
 
 from linebot import (
@@ -37,7 +36,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     
-    pretty_note = '♫♪♬'
+    pretty_note = '♫*♬'
     pretty_text = ''
     for i in event.message.text:
         pretty_text += i
