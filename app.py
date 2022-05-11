@@ -43,11 +43,11 @@ def handle_message(event):
         pretty_text += random.choice(pretty_note)
         
     path = 'excel_test.txt'
-    f = open(path, 'r')
-    print(f.read())
+    with open(path,"r") as f:
+        string3 = f.read()
     f.close()    
     
-    message = TextSendMessage(text=f.read())
+    message = TextSendMessage(text=string3)
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
