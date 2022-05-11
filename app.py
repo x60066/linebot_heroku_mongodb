@@ -1,4 +1,5 @@
 import random
+import xlrd
 from flask import Flask, request, abort
 
 from linebot import (
