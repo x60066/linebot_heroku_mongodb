@@ -42,7 +42,7 @@ def handle_message(event):
         pretty_text += i
         pretty_text += random.choice(pretty_note)
             
-    message = TextSendMessage(text='ye2n'+event.message.text)
+    message = TextSendMessage(text=pretty_text)
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
