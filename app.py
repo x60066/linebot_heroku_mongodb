@@ -1,3 +1,4 @@
+import random
 from flask import Flask, request, abort
 
 from linebot import (
@@ -37,11 +38,11 @@ def handle_message(event):
     
     pretty_note = '♫♪♬'
     pretty_text = ''
-#   for i in event.message.text:
-#           pretty_text += i
-#           pretty_text += random.choice(pretty_note)
+    for i in event.message.text:
+        pretty_text += i
+        pretty_text += random.choice(pretty_note)
             
-    message = TextSendMessage(text='yen'+event.message.text)
+    message = TextSendMessage(text='ye2n'+event.message.text)
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
