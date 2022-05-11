@@ -36,12 +36,12 @@ def callback():
 def handle_message(event):
     
     pretty_note = '♫♪♬'
-    pretty_text = ''      
-    for i in event.message.text:        
-            pretty_text += i
-            pretty_text += random.choice(pretty_note)  
+    pretty_text = ''
+#   for i in event.message.text:
+#           pretty_text += i
+#           pretty_text += random.choice(pretty_note)
             
-    message = TextSendMessage(text=pretty_text)
+    message = TextSendMessage(text='yen'+event.message.text)
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
