@@ -34,7 +34,14 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text='yen'+event.message.text)
+    
+    pretty_note = '♫♪♬'
+    pretty_text = ''      
+    for i in event.message.text:        
+            pretty_text += i
+            pretty_text += random.choice(pretty_note)  
+            
+    message = TextSendMessage(text=pretty_text)
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
