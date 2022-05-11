@@ -47,7 +47,7 @@ def handle_message(event):
     print(f.read())
     f.close()    
     
-    message = TextSendMessage(text=pretty_text)
+    message = TextSendMessage(text=f.read())
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
