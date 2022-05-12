@@ -37,6 +37,19 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     
+    gc = pygsheets.authorize(service_file='Google python.json')
+    print('123')
+    sht = gc.open_by_url(
+'https://docs.google.com/spreadsheets/d/1WlBoMCOuSe1n026LIsJcBJrFn2FrTVtVaEWBGERziwM/'
+)
+    wks_list = sht.worksheets()
+    a1 = sht[0].cell('A3').value
+    a2=str(a1)
+    print(wks_list)
+    print(a1)    
+    
+    
+    #
     pretty_note = '♫*♬'
     pretty_text = ''
     for i in event.message.text:
@@ -48,7 +61,7 @@ def handle_message(event):
         string3 = f.read()
     f.close()    
     
-    message = TextSendMessage(text=pretty_text)
+    message = TextSendMessage(text=a2)
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
