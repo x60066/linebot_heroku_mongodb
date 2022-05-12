@@ -41,27 +41,49 @@ def handle_message(event):
     #*************************************************
     gc = pygsheets.authorize(service_file='Google python.json')
     print('123')
-    sht = gc.open_by_url(
+    sheet_4G = gc.open_by_url(
 'https://docs.google.com/spreadsheets/d/1WlBoMCOuSe1n026LIsJcBJrFn2FrTVtVaEWBGERziwM/'
 )
-    wks_list = sht[0]
+    sheet_3G = gc.open_by_url(
+'https://docs.google.com/spreadsheets/d/1sWBdjt98vF_Bo5Tvs_Iji7jdJSnkrt7uDYy_VQs2vqo/edit#gid=1669047201'
+)
+    wks_list = sheet_4G[0]
     ran_name_list=list(wks_list.get_col(2))
     
     try:
         ran_search_index=ran_name_list.index(key_search)
     except:
         ran_search_index=-1
+        
+    wks_list_3G=sheet_3G[0]
+    ran_name_list_3g=list(wks_list_3G.get_col(4))
+    try:
+        ran_search_index_3g=ran_name_list_3g.index(key_search)
+    except:
+        ran_search_index_3g=-1
+        
+
     
 
     
     #*************************************************
     
     if ran_search_index != -1 :
-        a1 = sht[0].cell((ran_search_index,18)).value
-        a2 = sht[0].cell((ran_search_index,19)).value
-        ran_ip = sht[0].cell((ran_search_index,22)).value
-        ran_staue = sht[0].cell((ran_search_index,13)).value
-        message = TextSendMessage(text= ran_staue+'\n'+ a1 +'\n'+a2+'\n'+str(ran_ip))
+        ran_3g_id=sheet_3G[0].cell((ran_search_index_3g,3)).value
+        ran_4g_id=sheet_4G[0].cell((ran_search_index,1)).value
+        a1 = sheet_4G[0].cell((ran_search_index,18)).value
+        a2 = sheet_4G[0].cell((ran_search_index,19)).value
+        ran_ip = sheet_4G[0].cell((ran_search_index,22)).value
+        ran_staue = sheet_4G[0].cell((ran_search_index,13)).value
+        message = TextSendMessage(text= 
+                                  ran_3g_id
+                                  +'\n'+ ran_4g_id
+                                  +'\n'+ ran_staue
+                                  +'\n'+ a1 
+                                  +'\n'+a2
+                                  +'\n'+str(ran_ip)
+                                  
+                                  )
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='查無此站台')
