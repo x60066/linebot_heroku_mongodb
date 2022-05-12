@@ -37,6 +37,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     
+    #*************************************************
     gc = pygsheets.authorize(service_file='Google python.json')
     print('123')
     sht = gc.open_by_url(
@@ -49,7 +50,8 @@ def handle_message(event):
     print(a1)    
     
     
-    #
+    #*************************************************
+    
     pretty_note = '♫*♬'
     pretty_text = ''
     for i in event.message.text:
