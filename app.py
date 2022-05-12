@@ -45,20 +45,15 @@ def handle_message(event):
 'https://docs.google.com/spreadsheets/d/1WlBoMCOuSe1n026LIsJcBJrFn2FrTVtVaEWBGERziwM/'
 )
     wks_list = sht[0]
-    str_list = wks_list.find(key_search)
+    ran_name_list=list(wks_list.get_col(2))
+    ran_search_index=ran_name_list.index(key_search)
     
-    a1 = sht[0].cell((str_list[0].row,18)).value
-    a2 = sht[0].cell((str_list[0].row,19)).value
+    a1 = sht[0].cell((ran_search_index,18)).value
+    a2 = sht[0].cell((ran_search_index,19)).value
     
     #*************************************************
     
-    pretty_note = '♫*♬'
-    pretty_text = ''
-    for i in event.message.text:
-        pretty_text += i
-        pretty_text += random.choice(pretty_note)
-        
-    
+
     message = TextSendMessage(text='('+a1+')'+'+'+'('+a2+')')
     line_bot_api.reply_message(event.reply_token, message)
 
