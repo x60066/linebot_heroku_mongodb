@@ -52,18 +52,20 @@ def handle_message(event):
     except:
         ran_search_index=-1
     
-    a1 = sht[0].cell((ran_search_index,18)).value
-    a2 = sht[0].cell((ran_search_index,19)).value
-    ran_ip = sht[0].cell((ran_search_index,22)).value
+
     
     #*************************************************
     
     if ran_search_index != -1 :
-        message = TextSendMessage(text='設備=('+a1+')'+'+'+'('+a2+') , iP='+str(ran_ip))
+        a1 = sht[0].cell((ran_search_index,18)).value
+        a2 = sht[0].cell((ran_search_index,19)).value
+        ran_ip = sht[0].cell((ran_search_index,22)).value
+        message = TextSendMessage(text= a1 +'\n'+a2+'\n'+str(ran_ip))
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='查無此站台')
         line_bot_api.reply_message(event.reply_token, message)
+        
 
 
 
