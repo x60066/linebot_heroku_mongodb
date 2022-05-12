@@ -37,17 +37,15 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     
+    key_search=str(event.message.text)
     #*************************************************
     gc = pygsheets.authorize(service_file='Google python.json')
     print('123')
     sht = gc.open_by_url(
 'https://docs.google.com/spreadsheets/d/1WlBoMCOuSe1n026LIsJcBJrFn2FrTVtVaEWBGERziwM/'
 )
-    wks_list = sht.worksheets()
-    a1 = sht[0].cell('A3').value
-    a2=str(a1)
-    print(wks_list)
-    print(a1)    
+    wks_list = sht[0]
+    str_list = wks_list.find(key_search)
     
     
     #*************************************************
@@ -58,12 +56,8 @@ def handle_message(event):
         pretty_text += i
         pretty_text += random.choice(pretty_note)
         
-    path = 'excel_test.txt'
-    with open(path,"r") as f:
-        string3 = f.read()
-    f.close()    
     
-    message = TextSendMessage(text=a2)
+    message = TextSendMessage(text='ok')
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
