@@ -1,4 +1,5 @@
 import random
+import pygsheets
 from flask import Flask, request, abort
 
 from linebot import (
@@ -47,7 +48,7 @@ def handle_message(event):
         string3 = f.read()
     f.close()    
     
-    message = TextSendMessage(text=string3)
+    message = TextSendMessage(text=pretty_text)
     line_bot_api.reply_message(event.reply_token, message)
 
 import os
