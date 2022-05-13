@@ -37,51 +37,17 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     
+    #使用者輸入的訊息
     key_search=str(event.message.text)
-    #*************************************************
-    gc = pygsheets.authorize(service_file='Google python.json')
-    print('123')
-    sheet_4G = gc.open_by_url(
-'https://docs.google.com/spreadsheets/d/1WlBoMCOuSe1n026LIsJcBJrFn2FrTVtVaEWBGERziwM/'
-)
-    sheet_3G = gc.open_by_url(
-'https://docs.google.com/spreadsheets/d/1sWBdjt98vF_Bo5Tvs_Iji7jdJSnkrt7uDYy_VQs2vqo/edit#gid=1669047201'
-)
-    wks_list = sheet_4G[0]
-    ran_name_list=list(wks_list.get_col(2))
-    
-    try:
-        ran_search_index=ran_name_list.index(key_search)
-        ran_search_index+=1
-    except:
-        ran_search_index=-1
-        
-    wks_list_3G=sheet_3G[0]
-    ran_name_list_3g=list(wks_list_3G.get_col(4))
-    try:
-        ran_search_index_3g=ran_name_list_3g.index(key_search)
-        ran_search_index_3g+=1
-    except:
-        ran_search_index_3g=-1
-        
 
-    
 
-    
     #*************************************************
+    ran_search_index=1
     
     if ran_search_index != -1 :
-        ran_3g_id=sheet_3G[0].cell((ran_search_index_3g,3)).value
-        ran_4g_id=sheet_4G[0].cell((ran_search_index,1)).value
-        a2 = sheet_4G[0].cell((ran_search_index,28)).value
-        ran_ip = sheet_4G[0].cell((ran_search_index,32)).value
-        ran_staue = sheet_4G[0].cell((ran_search_index,13)).value
-        message = TextSendMessage(text= 
-                                  '3GID：'+ran_3g_id+'\n'
-                                  +'4GID：'+ ran_4g_id+'\n'
-                                  +'4SIT：'+ ran_staue+'\n'
-                                  +'4RFM：'+a2+'\n'
-                                  +'4BIP：'+str(ran_ip)
+
+        message = TextSendMessage(text='9999' 
+
                                   
                                   )
         
