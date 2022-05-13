@@ -44,16 +44,16 @@ def handle_message(event):
     key_search=str(event.message.text)
 
     #('is Nemuber')
-    if str.isdigit():
-        new3RVN = get_3G.RAN(str,1)
-        new4RVN = get_4G.RAN(str,1) 
-        new5RVN = get_5G.RAN(str,1)  
+    if key_search.isdigit():
+        new3RVN = get_3G.RAN(key_search,1)
+        new4RVN = get_4G.RAN(key_search,1) 
+        new5RVN = get_5G.RAN(key_search,1)  
         
     # ('not Nemuber')
     else:
-        new3RVN = get_3G.RAN(str,0)
-        new4RVN = get_4G.RAN(str,0)   
-        new5RVN = get_5G.RAN(str,0)   
+        new3RVN = get_3G.RAN(key_search,0)
+        new4RVN = get_4G.RAN(key_search,0)   
+        new5RVN = get_5G.RAN(key_search,0)   
 
 
     ran_search_index=1
