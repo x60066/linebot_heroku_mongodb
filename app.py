@@ -42,46 +42,47 @@ def handle_message(event):
     
     #使用者輸入的訊息
     key_search=str(event.message.text)
-
-    #('is Nemuber')
-    if key_search.isdigit():
-        new3RVN = get_3G.RAN(key_search,1)
-        new4RVN = get_4G.RAN(key_search,1) 
-        new5RVN = get_5G.RAN(key_search,1)  
-        
-    # ('not Nemuber')
-    else:
-        new3RVN = get_3G.RAN(key_search,0)
-        new4RVN = get_4G.RAN(key_search,0)   
-        new5RVN = get_5G.RAN(key_search,0)   
-
-
-    ran_search_index=1
-    
-    if new3RVN.ran_search_index != -1 or new4RVN.ran_search_index!= -1 or new5RVN.ran_search_index!= -1 :
-
-        message = TextSendMessage(text=
-                                  '3GID：'+new3RVN.ran_id+' '+new3RVN.SiteName+'\n' +
-                                  '4GID：'+new4RVN.ran_id+' '+new4RVN.SiteName+'\n' +
-                                  '5GID：'+new5RVN.ran_id+' '+new5RVN.SiteName+'\n' +
-                                  '3SIT：'+new3RVN.wCoSite+'\n' +
-                                  '4SIT：'+new4RVN.wCoSite+'\n' +
-                                  '5SIT：'+new5RVN.wCoSite+'\n' +
-                                  '3RFM：'+new3RVN.RFModule+'\n' +
-                                  '4RFM：'+new4RVN.RFModule+'\n' +
-                                  '5RFM：'+new5RVN.RFModule+'\n' +
-                                  '3BIP：'+new3RVN.BTSIP+'\n' +
-                                  '4BIP：'+new4RVN.BTSIP+'\n' +
-                                  '5BIP：'+new5RVN.BTSIP 
-
-                                  
-                                  )
-        
+    if key_search.isdigit() and len(key_search)==11 :
+        message = TextSendMessage(text='查無此電號')
         line_bot_api.reply_message(event.reply_token, message)
     else:
-        message = TextSendMessage(text='查無此站台')
-        line_bot_api.reply_message(event.reply_token, message)
+
+        #('is Nemuber')
+        if key_search.isdigit():
+            new3RVN = get_3G.RAN(key_search,1)
+            new4RVN = get_4G.RAN(key_search,1) 
+            new5RVN = get_5G.RAN(key_search,1)  
+            
+        # ('not Nemuber')
+        else:
+            new3RVN = get_3G.RAN(key_search,0)
+            new4RVN = get_4G.RAN(key_search,0)   
+            new5RVN = get_5G.RAN(key_search,0)   
+
+        ran_search_index=1
         
+        if new3RVN.ran_search_index != -1 or new4RVN.ran_search_index!= -1 or new5RVN.ran_search_index!= -1 :
+
+            message = TextSendMessage(text=
+                                    '3GID：'+new3RVN.ran_id+' '+new3RVN.SiteName+'\n' +
+                                    '4GID：'+new4RVN.ran_id+' '+new4RVN.SiteName+'\n' +
+                                    '5GID：'+new5RVN.ran_id+' '+new5RVN.SiteName+'\n' +
+                                    '3SIT：'+new3RVN.wCoSite+'\n' +
+                                    '4SIT：'+new4RVN.wCoSite+'\n' +
+                                    '5SIT：'+new5RVN.wCoSite+'\n' +
+                                    '3RFM：'+new3RVN.RFModule+'\n' +
+                                    '4RFM：'+new4RVN.RFModule+'\n' +
+                                    '5RFM：'+new5RVN.RFModule+'\n' +
+                                    '3BIP：'+new3RVN.BTSIP+'\n' +
+                                    '4BIP：'+new4RVN.BTSIP+'\n' +
+                                    '5BIP：'+new5RVN.BTSIP                                   
+                                    )
+            
+            line_bot_api.reply_message(event.reply_token, message)
+        else:
+            message = TextSendMessage(text='查無此站台')
+            line_bot_api.reply_message(event.reply_token, message)
+            
 
 
 
