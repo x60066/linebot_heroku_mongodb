@@ -63,7 +63,16 @@ def handle_message(event):
         message = TextSendMessage(text=
                                   '3GID：'+new3RVN.ran_id+' '+new3RVN.SiteName+'\n' +
                                   '4GID：'+new4RVN.ran_id+' '+new4RVN.SiteName+'\n' +
-                                  '5GID：'+new5RVN.ran_id+' '+new5RVN.SiteName+'\n' 
+                                  '5GID：'+new5RVN.ran_id+' '+new5RVN.SiteName+'\n' +
+                                  '3SIT：'+new3RVN.wCoSite+'\n' +
+                                  '4SIT：'+new4RVN.wCoSite+'\n' +
+                                  '5SIT：'+new5RVN.wCoSite+'\n' +
+                                  '3RFM：'+new3RVN.RFModule+'\n' +
+                                  '4RFM：'+new4RVN.RFModule+'\n' +
+                                  '5RFM：'+new5RVN.RFModule+'\n' +
+                                  '3BIP：'+new3RVN.BTSIP+'\n' +
+                                  '4BIP：'+new4RVN.BTSIP+'\n' +
+                                  '5BIP：'+new5RVN.BTSIP 
 
                                   
                                   )
