@@ -56,11 +56,21 @@ def handle_message(event):
         
     else:
 
-        #('is Nemuber')
+        #('is Nemuber').ran_4Id
         if key_search.isdigit():
-            new3RVN = get_3G.RAN(key_search,1)
-            new4RVN = get_4G.RAN(key_search,1) 
-            new5RVN = get_5G.RAN(key_search,1)  
+            if len(key_search)==4:
+                new3RVN = get_3G.RAN(key_search,1)
+                new4RVN = get_4G.RAN(new3RVN.ran_4Id,1) 
+                new5RVN = get_5G.RAN(key_search,1)
+            elif len(key_search)==6:
+                new4RVN = get_4G.RAN(key_search,1)
+                new3RVN = get_3G.RAN(key_search,1)   
+                new5RVN = get_5G.RAN(key_search,1)                              
+            elif len(key_search)==7:
+                new4RVN = get_4G.RAN(key_search,1)
+                new3RVN = get_3G.RAN(key_search,1) 
+                new5RVN = get_5G.RAN(key_search,1)                
+                 
             
         # ('not Nemuber')
         else:
