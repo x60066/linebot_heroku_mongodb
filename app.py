@@ -73,19 +73,18 @@ def handle_message(event):
     if ran_search_index != -1 :
         ran_3g_id=sheet_3G[0].cell((ran_search_index_3g,3)).value
         ran_4g_id=sheet_4G[0].cell((ran_search_index,1)).value
-        a1 = sheet_4G[0].cell((ran_search_index,27)).value
         a2 = sheet_4G[0].cell((ran_search_index,28)).value
         ran_ip = sheet_4G[0].cell((ran_search_index,32)).value
         ran_staue = sheet_4G[0].cell((ran_search_index,13)).value
         message = TextSendMessage(text= 
-                                  ran_3g_id
-                                  +'\n'+ ran_4g_id
-                                  +'\n'+ ran_staue
-                                  +'\n'+ a1 
-                                  +'\n'+a2
-                                  +'\n'+str(ran_ip)
+                                  '3GID:'+ran_3g_id
+                                  +'4GID:\n'+ ran_4g_id
+                                  +'4SIT:\n'+ ran_staue
+                                  +'4RFM:\n'+a2
+                                  +'4BIP:\n'+str(ran_ip)
                                   
                                   )
+        
         line_bot_api.reply_message(event.reply_token, message)
     else:
         message = TextSendMessage(text='查無此站台')
