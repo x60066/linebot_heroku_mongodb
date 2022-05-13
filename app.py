@@ -77,11 +77,11 @@ def handle_message(event):
         ran_ip = sheet_4G[0].cell((ran_search_index,32)).value
         ran_staue = sheet_4G[0].cell((ran_search_index,13)).value
         message = TextSendMessage(text= 
-                                  '3GID:'+ran_3g_id+'\n'
-                                  +'4GID:'+ ran_4g_id+'\n'
-                                  +'4SIT:'+ ran_staue+'\n'
-                                  +'4RFM:'+a2+'\n'
-                                  +'4BIP:'+str(ran_ip)
+                                  '3GID: '+ran_3g_id+'\n'
+                                  +'4GID: '+ ran_4g_id+'\n'
+                                  +'4SIT: '+ ran_staue+'\n'
+                                  +'4RFM: '+a2+'\n'
+                                  +'4BIP: '+str(ran_ip)
                                   
                                   )
         
