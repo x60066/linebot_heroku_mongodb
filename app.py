@@ -52,6 +52,7 @@ def handle_message(event):
     
     try:
         ran_search_index=ran_name_list.index(key_search)
+        ran_search_index+=1
     except:
         ran_search_index=-1
         
@@ -71,9 +72,9 @@ def handle_message(event):
     if ran_search_index != -1 :
         ran_3g_id=sheet_3G[0].cell((ran_search_index_3g,3)).value
         ran_4g_id=sheet_4G[0].cell((ran_search_index,1)).value
-        a1 = sheet_4G[0].cell((ran_search_index,18)).value
-        a2 = sheet_4G[0].cell((ran_search_index,19)).value
-        ran_ip = sheet_4G[0].cell((ran_search_index,22)).value
+        a1 = sheet_4G[0].cell((ran_search_index,27)).value
+        a2 = sheet_4G[0].cell((ran_search_index,28)).value
+        ran_ip = sheet_4G[0].cell((ran_search_index,32)).value
         ran_staue = sheet_4G[0].cell((ran_search_index,13)).value
         message = TextSendMessage(text= 
                                   ran_3g_id
