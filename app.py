@@ -58,9 +58,10 @@ def handle_message(event):
 
     ran_search_index=1
     
-    if ran_search_index != -1 :
+    if new3RVN.ran_search_index != -1 or new4RVN.ran_search_index!= -1 or new5RVN.ran_search_index!= -1 :
 
-        message = TextSendMessage(text='123' 
+        message = TextSendMessage(text=
+                                  '3GID：'+new3RVN.ran_id+' '+new3RVN.SiteName+'\n' 
 
                                   
                                   )
