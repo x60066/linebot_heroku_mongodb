@@ -60,7 +60,7 @@ def handle_message(event):
     
     if ran_search_index != -1 :
 
-        message = TextSendMessage(text=new4RVN.BTSIP 
+        message = TextSendMessage(text='123' 
 
                                   
                                   )
