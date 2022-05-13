@@ -28,9 +28,13 @@ class RAN:
             #取得表1中的col4
             ran_name_list_3g=list(wks_list_3G.get_col(4))
 
-        #模式1搜尋 台號
+        #模式1搜尋 3G台號
         elif ip == 1:
             ran_name_list_3g=list(wks_list_3G.get_col(3))
+            
+        #模式1搜尋 4G台號
+        elif ip == 2:
+            ran_name_list_3g=list(wks_list_3G.get_col(17))
             
             
         try:
