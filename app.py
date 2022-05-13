@@ -60,6 +60,7 @@ def handle_message(event):
     ran_name_list_3g=list(wks_list_3G.get_col(4))
     try:
         ran_search_index_3g=ran_name_list_3g.index(key_search)
+        ran_search_index_3g+=1
     except:
         ran_search_index_3g=-1
         
