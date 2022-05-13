@@ -39,12 +39,21 @@ def handle_message(event):
     import get_3G
     import get_4G
     import get_5G
-    
+    import get_ele_num
+
     #使用者輸入的訊息
     key_search=str(event.message.text)
+    
     if key_search.isdigit() and len(key_search)==11 :
-        message = TextSendMessage(text='查無此電號')
-        line_bot_api.reply_message(event.reply_token, message)
+        ele_num=get_ele_num.RAN(key_search)
+        
+        if ele_num.ran_search_index != -1 :
+            message = TextSendMessage(text=ele_num.ran_id)
+            line_bot_api.reply_message(event.reply_token, message)
+        else:
+            message = TextSendMessage(text='查無此電號')
+            line_bot_api.reply_message(event.reply_token, message)
+        
     else:
 
         #('is Nemuber')
