@@ -4,7 +4,7 @@ import pygsheets
 gc = pygsheets.authorize(service_file='Google python.json')
 #excel網址
 sht = gc.open_by_url(
-'https://docs.google.com/spreadsheets/d/1sWBdjt98vF_Bo5Tvs_Iji7jdJSnkrt7uDYy_VQs2vqo/edit#gid=1669047201'
+'https://docs.google.com/spreadsheets/d/1kC0iU1NGvuF6cPA8uVkTIf3Rj-tltgbVZOd7XP9Cq0A/edit#gid=834260441'
 )
 
 class RAN:
@@ -20,26 +20,26 @@ class RAN:
         self.RFModule=''
         self.BTSIP=''
         
-        wks_list_3G=sht[0]
+        wks_list=sht[0]
         
         #模式0搜尋 台名
         if ip == 0:
             #取得表1中的col4
-            ran_name_list_3g=list(wks_list_3G.get_col(4))
+            ran_name_list_3g=list(wks_list.get_col(2))
 
         #模式1搜尋 台號
         elif ip == 1:
-            ran_name_list_3g=list(wks_list_3G.get_col(3))
+            ran_name_list_3g=list(wks_list.get_col(1))
             
             
         try:
             self.ran_search_index=ran_name_list_3g.index(key_search)
             self.ran_search_index+=1
-            self.ran_id=sht[0].cell((self.ran_search_index,3)).value
-            self.SiteName=sht[0].cell((self.ran_search_index,4)).value
-            self.wCoSite=sht[0].cell((self.ran_search_index,11)).value
-            self.RFModule=sht[0].cell((self.ran_search_index,33)).value
-            self.BTSIP=sht[0].cell((self.ran_search_index,36)).value
+            self.ran_id=sht[0].cell((self.ran_search_index,1)).value
+            self.SiteName=sht[0].cell((self.ran_search_index,14)).value
+            self.wCoSite=sht[0].cell((self.ran_search_index,16)).value
+            self.RFModule=sht[0].cell((self.ran_search_index,22)).value
+            self.BTSIP=sht[0].cell((self.ran_search_index,23)).value
         except:
             self.ran_search_index=-1
 

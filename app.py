@@ -36,17 +36,31 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    import get_3G
+    import get_4G
+    import get_5G
     
     #使用者輸入的訊息
     key_search=str(event.message.text)
 
+    #('is Nemuber')
+    if str.isdigit():
+        new3RVN = get_3G.RAN(str,1)
+        new4RVN = get_4G.RAN(str,1) 
+        new5RVN = get_5G.RAN(str,1)  
+        
+    # ('not Nemuber')
+    else:
+        new3RVN = get_3G.RAN(str,0)
+        new4RVN = get_4G.RAN(str,0)   
+        new5RVN = get_5G.RAN(str,0)   
 
-    #*************************************************
+
     ran_search_index=1
     
     if ran_search_index != -1 :
 
-        message = TextSendMessage(text='9999' 
+        message = TextSendMessage(text=new4RVN.BTSIP 
 
                                   
                                   )
