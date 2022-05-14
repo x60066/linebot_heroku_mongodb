@@ -61,7 +61,7 @@ def handle_message(event):
             if len(key_search)==4:
                 new3RVN = get_3G.RAN(key_search,1)
                 new4RVN = get_4G.RAN(new3RVN.ran_4Id,1) 
-                new5RVN = get_5G.RAN(key_search,1)
+                new5RVN = get_5G.RAN('461'+new3RVN.ran_4Id[2:],1)
             elif len(key_search)==6:                
                 new3RVN = get_3G.RAN(key_search,2)
                 new4RVN = get_4G.RAN(key_search,1)                   
