@@ -94,7 +94,8 @@ def handle_message(event):
                                     '5RFM：'+new5RVN.RFModule+'\n' +
                                     '3BIP：'+new3RVN.BTSIP+'\n' +
                                     '4BIP：'+new4RVN.BTSIP+'\n' +
-                                    '5BIP：'+new5RVN.BTSIP                                   
+                                    '5BIP：'+new5RVN.BTSIP+'\n' +
+                                    'GPS：'+new4RVN.GPSE + ' ' + new4RVN.GPSS                                   
                                     )
             
             line_bot_api.reply_message(event.reply_token, message)
