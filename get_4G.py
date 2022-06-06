@@ -46,8 +46,8 @@ class RAN:
             self.wCoSite=sht[0].cell((self.ran_search_index,13)).value
             self.RFModule=sht[0].cell((self.ran_search_index,28)).value
             self.BTSIP=sht[0].cell((self.ran_search_index,32)).value
-            self.GPSE=sht[1].cell(3,4).value
-            self.GPSS=sht[1].cell(3,3).value
+            self.GPSE=sht[1].cell((3,3)).value
+            self.GPSS=sht[1].cell((3,4)).value
             
         except:
             self.ran_search_index=-1
