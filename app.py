@@ -102,7 +102,7 @@ def handle_message(event):
             
             line_bot_api.reply_message(event.reply_token, message)
         else:
-            message = TextSendMessage(text='查無此站台 (上次更新時間2022/06/30) ')
+            message = TextSendMessage(text='查無此站台+'+'\n'+'上次更新時間2022/06/30')
             line_bot_api.reply_message(event.reply_token, message)
             
 
