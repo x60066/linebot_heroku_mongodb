@@ -19,6 +19,7 @@ class RAN:
         self.wCoSite=''
         self.RFModule=''
         self.BTSIP=''
+        self.ran_PCI=''
         
         wks_list=sht[0]
         
@@ -40,6 +41,7 @@ class RAN:
             self.wCoSite=sht[0].cell((self.ran_search_index,16)).value
             self.RFModule=sht[0].cell((self.ran_search_index,22)).value
             self.BTSIP=sht[0].cell((self.ran_search_index,23)).value
+            self.ran_PCI=sht[0].cell((self.ran_search_index,17)).value
         except:
             self.ran_search_index=-1
 

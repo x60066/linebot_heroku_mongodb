@@ -95,6 +95,8 @@ def handle_message(event):
                                     '3BIP：'+new3RVN.BTSIP+'\n' +
                                     '4BIP：'+new4RVN.BTSIP+'\n' +
                                     '5BIP：'+new5RVN.BTSIP+'\n' +
+                                    '4PCI：'+new4RVN.ran_PCI+'\n' +
+                                    '5PCI：'+new5RVN.ran_PCI+'\n' +
                                     'GPS：'+new4RVN.GPSS + ' , ' + new4RVN.GPSE                                   
                                     )
             
