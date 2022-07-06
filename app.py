@@ -1,6 +1,7 @@
 import random
 import pygsheets
-from flask import Flask, request, abort,render_template
+# 增加了 render_template
+from flask import Flask, request, abort, render_template
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -18,9 +19,11 @@ line_bot_api = LineBotApi('TnS1t96rjGH7IvlqxyHqQ25e/e6jvVLOQfDUBaalj71kZu4miy9PR
 # Channel Secret1
 handler = WebhookHandler('c3dedfb2e69582e5d91aa3775c2b3eb4')
 
+# 增加的這段放在下面
 @app.route("/")
 def home():
     return render_template("home.html")
+# 增加的這段放在上面
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
