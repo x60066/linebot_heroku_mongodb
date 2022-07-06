@@ -6,7 +6,6 @@ sched = BlockingScheduler()
 
 @sched.scheduled_job('cron', day_of_week='mon-fri', minute='*/20')
 def scheduled_job():
-    print(f'{datetime.datetime.now().ctime()}')
     print('Success 1')
     url = "https://chtran.herokuapp.com/"
     conn = urllib.request.urlopen(url)
