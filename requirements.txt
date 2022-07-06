@@ -3,3 +3,5 @@ flask
 pymongo
 dnspython==1.16.0
 pygsheets
+APScheduler==3.6.1
+gunicorn==19.9.0
