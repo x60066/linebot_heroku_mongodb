@@ -91,26 +91,26 @@ def handle_message(event):
 
             message = TextSendMessage(text=
                                       '【 '+new4RVN.XRAN+' 】\n'+'\n' +
-                                    '【BtsId】'+
+                                    '【BtsId】'+'\n' +
                                     ''+new3RVN.ran_id+' '+new3RVN.SiteName+'\n' +
                                     ''+new4RVN.ran_id+' '+new4RVN.SiteName+'\n' +
                                     ''+new5RVN.ran_id+' '+new5RVN.SiteName+'\n' +'\n' +
-                                    '【Co-Site】'+
+                                    '【Co-Site】'+'\n' +
                                     '3：'+new3RVN.wCoSite+'\n' +
                                     '4：'+new4RVN.wCoSite+'\n' +
                                     '5：'+new5RVN.wCoSite+'\n' +'\n' +
-                                    '【RF_Module】'+
+                                    '【RF_Module】'+'\n' +
                                     '3：'+new3RVN.RFModule+'\n' +
                                     '4：'+new4RVN.RFModule+'\n' +
                                     '5：'+new5RVN.RFModule+'\n' +'\n' +
-                                    '【IP address】'+
+                                    '【IP address】'+'\n' +
                                     '3：'+new3RVN.BTSIP+'\n' +
                                     '4：'+new4RVN.BTSIP+'\n' +
                                     '5：'+new5RVN.BTSIP+'\n' +'\n' +
-                                    '【PCI】'+
+                                    '【PCI】'+'\n' +
                                     '4：'+new4RVN.ran_PCI+'\n' +
                                     '5：'+new5RVN.ran_PCI+'\n' +'\n' +
-                                    '【GPS】'+
+                                    '【GPS】'+'\n' +
                                     'GPS：'+new4RVN.GPSE + ' , ' + new4RVN.GPSS                                   
                                     )
             
