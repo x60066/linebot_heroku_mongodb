@@ -90,21 +90,27 @@ def handle_message(event):
         if new3RVN.ran_search_index != -1 or new4RVN.ran_search_index!= -1 or new5RVN.ran_search_index!= -1 :
 
             message = TextSendMessage(text=
-                                      '【 '+new4RVN.XRAN+' 】\n'+
-                                    '3GID：'+new3RVN.ran_id+' '+new3RVN.SiteName+'\n' +
-                                    '4GID：'+new4RVN.ran_id+' '+new4RVN.SiteName+'\n' +
-                                    '5GID：'+new5RVN.ran_id+' '+new5RVN.SiteName+'\n' +
-                                    '3SIT：'+new3RVN.wCoSite+'\n' +
-                                    '4SIT：'+new4RVN.wCoSite+'\n' +
-                                    '5SIT：'+new5RVN.wCoSite+'\n' +
-                                    '3RFM：'+new3RVN.RFModule+'\n' +
-                                    '4RFM：'+new4RVN.RFModule+'\n' +
-                                    '5RFM：'+new5RVN.RFModule+'\n' +
-                                    '3BIP：'+new3RVN.BTSIP+'\n' +
-                                    '4BIP：'+new4RVN.BTSIP+'\n' +
-                                    '5BIP：'+new5RVN.BTSIP+'\n' +
-                                    '4PCI：'+new4RVN.ran_PCI+'\n' +
-                                    '5PCI：'+new5RVN.ran_PCI+'\n' +
+                                      '【 '+new4RVN.XRAN+' 】\n'+'\n' +
+                                    '【BtsId】'+
+                                    ''+new3RVN.ran_id+' '+new3RVN.SiteName+'\n' +
+                                    ''+new4RVN.ran_id+' '+new4RVN.SiteName+'\n' +
+                                    ''+new5RVN.ran_id+' '+new5RVN.SiteName+'\n' +'\n' +
+                                    '【Co-Site】'+
+                                    '3：'+new3RVN.wCoSite+'\n' +
+                                    '4：'+new4RVN.wCoSite+'\n' +
+                                    '5：'+new5RVN.wCoSite+'\n' +'\n' +
+                                    '【RF_Module】'+
+                                    '3：'+new3RVN.RFModule+'\n' +
+                                    '4：'+new4RVN.RFModule+'\n' +
+                                    '5：'+new5RVN.RFModule+'\n' +'\n' +
+                                    '【IP address】'+
+                                    '3：'+new3RVN.BTSIP+'\n' +
+                                    '4：'+new4RVN.BTSIP+'\n' +
+                                    '5：'+new5RVN.BTSIP+'\n' +'\n' +
+                                    '【PCI】'+
+                                    '4：'+new4RVN.ran_PCI+'\n' +
+                                    '5：'+new5RVN.ran_PCI+'\n' +'\n' +
+                                    '【GPS】'+
                                     'GPS：'+new4RVN.GPSE + ' , ' + new4RVN.GPSS                                   
                                     )
             
