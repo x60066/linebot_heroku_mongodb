@@ -22,10 +22,10 @@ class RAN:
         self.GPSE=''
         self.GPSS=''
         self.ran_PCI=''
-        self.ran_5Id=''       
+        self.ran_5Id=''    
+        self.XRAN='' 
         
         wks_list=sht[0]
-        wks_list_GPS=sht[1]
         
         #模式0搜尋 台名
         if ip == 0:
@@ -36,8 +36,6 @@ class RAN:
         elif ip == 1:
             ran_name_list_3g=list(wks_list.get_col(1))
             
-        #搜尋GPS
-        ran_name_list_GPS=list(wks_list_GPS.get_col(1))
             
             
         try:
@@ -51,9 +49,11 @@ class RAN:
             self.ran_PCI=sht[0].cell((self.ran_search_index,23)).value
             self.ran_5Id=sht[0].cell((self.ran_search_index,17)).value
             
-            self.GPS_index=ran_name_list_GPS.index(key_search+'L')
-            self.GPSE=sht[1].cell((self.GPS_index+1,3)).value
-            self.GPSS=sht[1].cell((self.GPS_index+1,4)).value
+            self.GPSE=sht[0].cell((self.ran_search_index,53)).value
+            self.GPSS=sht[0].cell((self.ran_search_index,52)).value
+            
+            self.XRAN=sht[0].cell((self.ran_search_index,47)).value
+            
             
         except:
             self.ran_search_index=-1

@@ -90,6 +90,7 @@ def handle_message(event):
         if new3RVN.ran_search_index != -1 or new4RVN.ran_search_index!= -1 or new5RVN.ran_search_index!= -1 :
 
             message = TextSendMessage(text=
+                                      new4RVN.XRAN+'\n'+
                                     '3GID：'+new3RVN.ran_id+' '+new3RVN.SiteName+'\n' +
                                     '4GID：'+new4RVN.ran_id+' '+new4RVN.SiteName+'\n' +
                                     '5GID：'+new5RVN.ran_id+' '+new5RVN.SiteName+'\n' +
