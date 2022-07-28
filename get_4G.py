@@ -63,11 +63,11 @@ class RAN:
         except:
             self.ran_search_index=-1
             
-        res = difflib.get_close_matches(key_search,trs_list_check,4,cutoff=0.6)
+        res = difflib.get_close_matches(key_search,trs_list_check,4,cutoff=0.5)
         
         for trs_search in res:
             a=trs_list_check.index(trs_search)+1
-            self.TRS=sht[1].cell((a,1)).value+' '+sht[1].cell((a,9)).value
+            self.TRS+=sht[1].cell((a,1)).value+' '+sht[1].cell((a,9)).value
         
         
 
