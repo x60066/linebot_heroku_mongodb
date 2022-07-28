@@ -1,4 +1,4 @@
-
+import difflib
 import pygsheets
 #存取token
 gc = pygsheets.authorize(service_file='Google python.json')
@@ -24,8 +24,10 @@ class RAN:
         self.ran_PCI=''
         self.ran_5Id=''    
         self.XRAN='' 
+        self.TRS='' 
         
         wks_list=sht[0]
+        trs_list=sht[1]
         
         #模式0搜尋 台名
         if ip == 0:
@@ -35,6 +37,7 @@ class RAN:
         #模式1搜尋 台號
         elif ip == 1:
             ran_name_list_3g=list(wks_list.get_col(1))
+            trs_list_check=list(trs_list.get_col(1))
             
             
             
@@ -54,6 +57,9 @@ class RAN:
             
             self.XRAN=sht[0].cell((self.ran_search_index,47)).value
             
+            res = difflib.get_close_matches(key_search,trs_list_check,4,cutoff=0.6)
+            self.TRS='trs:'+trs_list_check.index(res[0])
+
             
         except:
             self.ran_search_index=-1

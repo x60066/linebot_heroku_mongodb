@@ -111,7 +111,8 @@ def handle_message(event):
                                     '4：'+new4RVN.ran_PCI+'\n' +
                                     '5：'+new5RVN.ran_PCI+'\n' +'\n' +
                                     '【GPS】'+'\n' +
-                                    'GPS：'+new4RVN.GPSE + ' , ' + new4RVN.GPSS                                   
+                                    'GPS：'+new4RVN.GPSE + ' , ' + new4RVN.GPSS  +
+                                    new4RVN.TRS                                 
                                     )
             
             line_bot_api.reply_message(event.reply_token, message)
