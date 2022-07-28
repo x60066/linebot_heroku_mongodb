@@ -63,7 +63,7 @@ class RAN:
         except:
             self.ran_search_index=-1
             
-        res = difflib.get_close_matches(key_search,trs_list_check,5,cutoff=0.5)
+        res = difflib.get_close_matches(key_search,trs_list_check,5,cutoff=0.7)
         print (res)
         
         for trs_search in res:
