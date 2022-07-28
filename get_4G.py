@@ -57,12 +57,14 @@ class RAN:
             
             self.XRAN=sht[0].cell((self.ran_search_index,47)).value
             
-            res = difflib.get_close_matches(key_search,trs_list_check,4,cutoff=0.6)
-            self.TRS='trs:'+trs_list_check.index(res[0])
+
 
             
         except:
             self.ran_search_index=-1
+            
+        #res = difflib.get_close_matches(key_search,trs_list_check,4,cutoff=0.6)
+        self.TRS='trs:'+trs_list_check.index('4034U')
 
         
                 
