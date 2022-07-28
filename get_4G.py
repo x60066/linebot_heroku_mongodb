@@ -65,7 +65,10 @@ class RAN:
             
         res = difflib.get_close_matches(key_search,trs_list_check,4,cutoff=0.6)
         
-        self.TRS=sht[1].cell((trs_list_check.index('4034U')+1,9)).value
+        for trs_search in res:
+            self.TRS=sht[1].cell((trs_list_check.index(trs_search)+1,9)).value
+        
+        
 
         
                 
