@@ -78,7 +78,17 @@ class RAN:
             #LAT
             self.GPSE=  sht[0].cell((self.ran_search_index,54)).value  +' ' +sht[0].cell((self.ran_search_index,55)).value   
             location2=geolocation.reverse(str(self.GPSE))
-            self.GPSE=self.GPSE+'\n'+location2.address       
+            
+            str2=(str(location2.address)).split(',')
+            k2 = int(len(str2))-3
+            s2=''
+            while k2 > 0:
+                s2+=str2[k2]
+                k2 -= 1
+            print(s2)
+            
+            
+            self.GPSE=self.GPSE+'\n'+s2       
             #RANtype AU
             self.XRAN=sht[0].cell((self.ran_search_index,47)).value
             
