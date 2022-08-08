@@ -1,5 +1,9 @@
 import difflib
 import pygsheets
+
+#地址轉換
+from geopy.geocoders import Nominatim
+
 #存取token
 gc = pygsheets.authorize(service_file='Google python.json')
 #excel網址
@@ -28,6 +32,10 @@ class RAN:
         
         wks_list=sht[0]
         trs_list=sht[1]
+        
+        geolocation = Nominatim(user_agent="geotest")
+
+
         
         #模式0搜尋 台名
         if ip == 0:
@@ -59,6 +67,9 @@ class RAN:
             #nrBtsId Q
             self.ran_5Id=sht[0].cell((self.ran_search_index,17)).value  
                       
+            location = geolocation.reverse("24.423 120.86642")
+            print(location.address)
+            
             #LON
             self.GPSS=sht[0].cell((self.ran_search_index,52)).value  +' ' +sht[0].cell((self.ran_search_index,53)).value           
             #LAT
