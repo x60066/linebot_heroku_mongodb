@@ -60,9 +60,9 @@ class RAN:
             self.ran_5Id=sht[0].cell((self.ran_search_index,17)).value  
                       
             #LON
-            self.GPSE=sht[0].cell((self.ran_search_index,53)).value  +' ' +sht[0].cell((self.ran_search_index,52)).value           
+            self.GPSS=sht[0].cell((self.ran_search_index,53)).value  +' ' +sht[0].cell((self.ran_search_index,52)).value           
             #LAT
-            self.GPSS=  sht[0].cell((self.ran_search_index,55)).value  +' ' +sht[0].cell((self.ran_search_index,54)).value          
+            self.GPSE=  sht[0].cell((self.ran_search_index,55)).value  +' ' +sht[0].cell((self.ran_search_index,54)).value          
             #RANtype AU
             self.XRAN=sht[0].cell((self.ran_search_index,47)).value
             

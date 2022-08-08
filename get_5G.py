@@ -4,7 +4,7 @@ import pygsheets
 gc = pygsheets.authorize(service_file='Google python.json')
 #excel網址
 sht = gc.open_by_url(
-'https://docs.google.com/spreadsheets/d/1kC0iU1NGvuF6cPA8uVkTIf3Rj-tltgbVZOd7XP9Cq0A/edit#gid=834260441'
+'https://docs.google.com/spreadsheets/d/1kC0iU1NGvuF6cPA8uVkTIf3Rj-tltgbVZOd7XP9Cq0A/edit#gid=719237779'
 )
 
 class RAN:
@@ -36,11 +36,17 @@ class RAN:
         try:
             self.ran_search_index=ran_name_list_3g.index(key_search)
             self.ran_search_index+=1
+             #id A
             self.ran_id=sht[0].cell((self.ran_search_index,1)).value
+            #lnBtsIdLL_NameChs N
             self.SiteName=sht[0].cell((self.ran_search_index,14)).value
+            #nrSecID P
             self.wCoSite=sht[0].cell((self.ran_search_index,16)).value
+            #rMod_nrbts V
             self.RFModule=sht[0].cell((self.ran_search_index,22)).value
-            self.BTSIP=sht[0].cell((self.ran_search_index,23)).value
+            #mPlaneIpAddr AC
+            self.BTSIP=sht[0].cell((self.ran_search_index,29)).value
+            #nrSecPCI Q
             self.ran_PCI=sht[0].cell((self.ran_search_index,17)).value
         except:
             self.ran_search_index=-1
