@@ -44,17 +44,26 @@ class RAN:
         try:
             self.ran_search_index=ran_name_list_3g.index(key_search)
             self.ran_search_index+=1
+            #id A
             self.ran_id=sht[0].cell((self.ran_search_index,1)).value
+            #lnBtsIdLL_NameChs L
             self.SiteName=sht[0].cell((self.ran_search_index,12)).value
+            #Co-Site M
             self.wCoSite=sht[0].cell((self.ran_search_index,13)).value
-            self.RFModule=sht[0].cell((self.ran_search_index,28)).value
-            self.BTSIP=sht[0].cell((self.ran_search_index,32)).value
+            #RF_Module AG
+            self.RFModule=sht[0].cell((self.ran_search_index,33)).value
+            #IP address AK
+            self.BTSIP=sht[0].cell((self.ran_search_index,37)).value
+            #insecPCI W
             self.ran_PCI=sht[0].cell((self.ran_search_index,23)).value
-            self.ran_5Id=sht[0].cell((self.ran_search_index,17)).value
-            
-            self.GPSE=sht[0].cell((self.ran_search_index,53)).value
-            self.GPSS=sht[0].cell((self.ran_search_index,52)).value
-            
+            #nrBtsId Q
+            self.ran_5Id=sht[0].cell((self.ran_search_index,17)).value  
+                      
+            #LON
+            self.GPSE=sht[0].cell((self.ran_search_index,53)).value  +' ' +sht[0].cell((self.ran_search_index,52)).value           
+            #LAT
+            self.GPSS=  sht[0].cell((self.ran_search_index,55)).value  +' ' +sht[0].cell((self.ran_search_index,54)).value          
+            #RANtype AU
             self.XRAN=sht[0].cell((self.ran_search_index,47)).value
             
 
