@@ -81,7 +81,7 @@ class RAN:
                 s1+=str1[k1]
                 k1 -= 1     
                 
-            self.GPSS=self.GPSS+'\n'+location1.address
+            self.GPSS=self.GPSS+'\n'+s1
             
             #LAT
             self.GPSE=  sht[0].cell((self.ran_search_index,54)).value  +' ' +sht[0].cell((self.ran_search_index,55)).value   
