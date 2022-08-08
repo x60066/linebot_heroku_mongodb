@@ -4,7 +4,7 @@ import pygsheets
 gc = pygsheets.authorize(service_file='Google python.json')
 #excel網址
 sht = gc.open_by_url(
-'https://docs.google.com/spreadsheets/d/1WlBoMCOuSe1n026LIsJcBJrFn2FrTVtVaEWBGERziwM/'
+'https://docs.google.com/spreadsheets/d/1WlBoMCOuSe1n026LIsJcBJrFn2FrTVtVaEWBGERziwM/edit#gid=1865579787'
 )
 
 class RAN:

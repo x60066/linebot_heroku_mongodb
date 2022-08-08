@@ -111,7 +111,8 @@ def handle_message(event):
                                     '4：'+new4RVN.ran_PCI+'\n' +
                                     '5：'+new5RVN.ran_PCI+'\n' +'\n' +
                                     '【GPS】'+'\n' +
-                                    'GPS：'+new4RVN.GPSE + ' , ' + new4RVN.GPSS  +'\n'
+                                    'GPS1：'+ new4RVN.GPSS  +'\n'+
+                                    'GPS2：'+ new4RVN.GPSE  +'\n'+
                                     'TRS：'+new4RVN.TRS                                 
                                     )
             
