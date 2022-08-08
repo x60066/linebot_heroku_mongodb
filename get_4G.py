@@ -71,7 +71,10 @@ class RAN:
             print(location.address)
             
             #LON
-            self.GPSS=sht[0].cell((self.ran_search_index,52)).value  +' ' +sht[0].cell((self.ran_search_index,53)).value           
+            self.GPSS=sht[0].cell((self.ran_search_index,52)).value  +' ' +sht[0].cell((self.ran_search_index,53)).value   
+            location1=geolocation.reverse(str(self.GPSS))
+            self.GPSS=self.GPSS+location1.address
+            
             #LAT
             self.GPSE=  sht[0].cell((self.ran_search_index,54)).value  +' ' +sht[0].cell((self.ran_search_index,55)).value          
             #RANtype AU
