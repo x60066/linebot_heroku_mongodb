@@ -90,7 +90,7 @@ def handle_message(event):
         if new3RVN.ran_search_index != -1 or new4RVN.ran_search_index!= -1 or new5RVN.ran_search_index!= -1 :
 
             message = TextSendMessage(text=
-                                      '【 '+new4RVN.XRAN+' 】\n'+'\n' +
+                                      '【 '+new4RVN.XRAN+' 】 '+
                                     '【BtsId】'+'\n' +
                                     ''+new3RVN.ran_id+' '+new3RVN.SiteName+'\n' +
                                     ''+new4RVN.ran_id+' '+new4RVN.SiteName+'\n' +
@@ -112,7 +112,7 @@ def handle_message(event):
                                     '5：'+new5RVN.ran_PCI+'\n' +'\n' +
                                     '【GPS】'+'\n' +
                                     'GPS1：'+ new4RVN.GPSS  +'\n'+
-                                    'GPS2：'+ new4RVN.GPSE  +'\n'+'\n'                               
+                                    'GPS2：'+ new4RVN.GPSE                                 
                                     )
             
             line_bot_api.reply_message(event.reply_token, message)
