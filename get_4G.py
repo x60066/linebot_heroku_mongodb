@@ -103,7 +103,7 @@ class RAN:
             
             
             print("Columns1")
-            df = pandas.read_excel('linebot_heroku_mongodb/20220805_LTE_CoBTS_CHT.xlsx')
+            df = pandas.read_excel('20220805_LTE_CoBTS_CHT.xlsx')
             print("Columns2")
             print(df.columns)
 
