@@ -102,9 +102,9 @@ class RAN:
             self.XRAN=sht[0].cell((self.ran_search_index,47)).value
             
             
-            
+            print("Columns1")
             df = pandas.read_excel('linebot_heroku_mongodb/20220805_LTE_CoBTS_CHT.xlsx')
-            print("Columns")
+            print("Columns2")
             print(df.columns)
 
 
