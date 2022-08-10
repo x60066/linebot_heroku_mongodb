@@ -112,13 +112,12 @@ def handle_message(event):
                                     '5：'+new5RVN.ran_PCI+'\n' +'\n' +
                                     '【GPS】'+'\n' +
                                     'GPS1：'+ new4RVN.GPSS  +'\n'+
-                                    'GPS2：'+ new4RVN.GPSE  +'\n'+'\n'
-                                    '傳輸：'+'\n'+new4RVN.TRS                                 
+                                    'GPS2：'+ new4RVN.GPSE  +'\n'+'\n'                               
                                     )
             
             line_bot_api.reply_message(event.reply_token, message)
         else:
-            message = TextSendMessage(text='查無此站台+'+'\n'+'上次更新時間2022/06/30')
+            message = TextSendMessage(text='查無此站台+'+'\n'+'上次更新時間2022/08/10')
             line_bot_api.reply_message(event.reply_token, message)
             
 
