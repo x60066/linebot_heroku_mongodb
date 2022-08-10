@@ -6,3 +6,5 @@ pygsheets
 APScheduler==3.6.1
 gunicorn==19.9.0
 geopy
+pandas
+openpyxl

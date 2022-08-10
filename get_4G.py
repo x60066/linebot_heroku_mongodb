@@ -4,6 +4,9 @@ import pygsheets
 #地址轉換
 from geopy.geocoders import Nominatim
 
+import xlrd
+import pandas
+
 #存取token
 gc = pygsheets.authorize(service_file='Google python.json')
 #excel網址
@@ -98,12 +101,17 @@ class RAN:
             #RANtype AU
             self.XRAN=sht[0].cell((self.ran_search_index,47)).value
             
+            
+            
+            df = pandas.read_excel('linebot_heroku_mongodb/20220805_LTE_CoBTS_CHT.xlsx')
+            print("Columns")
+            print(df.columns)
 
 
             
         except:
             self.ran_search_index=-1
-            
+        
         # try:    
         #     res = difflib.get_close_matches(key_search+'L0',trs_list_check,10,cutoff=0.85)
         #     print (res)
