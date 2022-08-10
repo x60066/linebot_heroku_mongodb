@@ -4,6 +4,8 @@ import pygsheets
 #地址轉換
 from geopy.geocoders import Nominatim
 
+
+from xlrd import open_workbook
 import xlrd
 import pandas
 
@@ -34,10 +36,13 @@ class RAN:
         self.TRS='' 
         
         wks_list=sht[0]
-        trs_list=sht[1]
         
         geolocation = Nominatim(user_agent="geotest")
-
+        
+        
+        #wb = open_workbook('20220805_LTE_CoBTS_CHT.xlsx')
+        #sheet = wb.sheet_by_index(0)
+        
 
         
         #模式0搜尋 台名
@@ -48,8 +53,7 @@ class RAN:
         #模式1搜尋 台號
         elif ip == 1:
             ran_name_list_3g=list(wks_list.get_col(1))
-            trs_list_check=list(trs_list.get_col(1))
-            
+           
             
             
         try:
@@ -102,10 +106,7 @@ class RAN:
             self.XRAN=sht[0].cell((self.ran_search_index,47)).value
             
             
-            print("Columns1")
-            df = pandas.read_excel('20220805_LTE_CoBTS_CHT.xlsx')
-            print("Columns2")
-            print(df.columns)
+
 
 
             
