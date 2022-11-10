@@ -39,7 +39,7 @@ class RAN:
         
         geolocation = Nominatim(user_agent="geotest")
         
-        #df = pandas.read_csv("line-bot-sdk-python/sample.csv",usecols=["lnBtsId","SiteName"])
+        df = pandas.read_csv("linebot_heroku_mongodb/sample.csv",usecols=["lnBtsId","SiteName"])
 
         #filt = (df['lnBtsId'] == 413792)
         #fff=df.loc[filt, ['SiteName']]
