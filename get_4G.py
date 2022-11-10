@@ -39,7 +39,11 @@ class RAN:
         
         geolocation = Nominatim(user_agent="geotest")
         
-        
+        df = pandas.read_csv("line-bot-sdk-python/sample.csv",usecols=["lnBtsId","SiteName"])
+
+        filt = (df['lnBtsId'] == 413792)
+        fff=df.loc[filt, ['SiteName']]
+        print(fff.iat[0,0])
         #wb = open_workbook('20220805_LTE_CoBTS_CHT.xlsx')
         #sheet = wb.sheet_by_index(0)
         
