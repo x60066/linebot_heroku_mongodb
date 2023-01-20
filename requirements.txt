@@ -1,5 +1,6 @@
 line-bot-sdk
 flask
+<<<<<<< HEAD
 pymongo
 dnspython==1.16.0
 pygsheets
@@ -9,3 +10,8 @@ geopy
 pandas
 openpyxl
 xlrd
+=======
+pymongo==3.8.0
+dnspython==1.16.0
+gunicorn
+>>>>>>> 69008175f1c5899892769c76489024d93c4882c5
